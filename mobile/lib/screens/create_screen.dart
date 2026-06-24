@@ -74,15 +74,15 @@ class _CreateScreenState extends State<CreateScreen> {
       final instructions = _instructionsController.text.trim();
       CreateResult result;
 
-      if (AppConfig.useMockData) {
-        result = await ServiceLocator.instance.mockService.createDocument(
+      if (AppConfig.useMockServices) {
+        result = await ServiceLocator().mock.createDocument(
           context,
           _selectedType,
           instructions.isEmpty ? null : instructions,
           locale,
         );
       } else {
-        result = await ServiceLocator.instance.apiService.createDocument(
+        result = await ServiceLocator().api.createDocument(
           context,
           _selectedType,
           instructions.isEmpty ? null : instructions,

@@ -52,8 +52,8 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
     });
 
     try {
-      if (!AppConfig.useMockData) {
-        await ServiceLocator.instance.apiService.submitFeedback(
+      if (!AppConfig.useMockServices) {
+        await ServiceLocator().api.submitFeedback(
           category: _category,
           subject: subject,
           body: body,

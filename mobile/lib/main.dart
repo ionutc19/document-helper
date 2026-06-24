@@ -11,10 +11,10 @@ import 'screens/landing_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   MobileAds.instance.initialize();
-  ServiceLocator.instance.initialize();
+  ServiceLocator();
 
   final languageProvider = LanguageProvider();
-  await languageProvider.init();
+  await languageProvider.load();
 
   runApp(
     ChangeNotifierProvider.value(
@@ -34,9 +34,7 @@ class DocumentAssistantApp extends StatelessWidget {
     return MaterialApp(
       title: 'Document Assistant',
       debugShowCheckedModeBanner: false,
-      theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.system,
+      theme: AppTheme.light,
       locale: langProvider.locale,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: const [

@@ -15,7 +15,7 @@ class _PlansScreenState extends State<PlansScreen> {
   Future<void> _purchase(String productId) async {
     setState(() => _purchasing = true);
     try {
-      await BillingService.instance.purchase(productId);
+      await BillingService().purchase(productId);
     } finally {
       if (mounted) setState(() => _purchasing = false);
     }

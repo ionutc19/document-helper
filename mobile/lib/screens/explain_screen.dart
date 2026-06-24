@@ -41,10 +41,10 @@ class _ExplainScreenState extends State<ExplainScreen> {
       final locale = Localizations.localeOf(context).languageCode;
       ExplainResult result;
 
-      if (AppConfig.useMockData) {
-        result = await ServiceLocator.instance.mockService.explainDocument(text, locale);
+      if (AppConfig.useMockServices) {
+        result = await ServiceLocator().mock.explainDocument(text, locale);
       } else {
-        result = await ServiceLocator.instance.apiService.explainDocument(text, locale);
+        result = await ServiceLocator().api.explainDocument(text, locale);
       }
 
       if (mounted) setState(() => _result = result);
