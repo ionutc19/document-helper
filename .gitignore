@@ -1,0 +1,41 @@
+# Flutter / Dart
+mobile/build/
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub-cache/
+mobile/.pub/
+mobile/pubspec.lock
+
+# Android
+mobile/android/.gradle/
+mobile/android/app/build/
+mobile/android/build/
+mobile/android/local.properties
+mobile/android/key.properties
+*.jks
+*.keystore
+
+# Python
+server/__pycache__/
+server/app/__pycache__/
+server/app/**/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+server/.env
+server/venv/
+server/.venv/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
