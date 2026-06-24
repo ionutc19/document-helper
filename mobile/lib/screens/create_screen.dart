@@ -76,17 +76,17 @@ class _CreateScreenState extends State<CreateScreen> {
 
       if (AppConfig.useMockServices) {
         result = await ServiceLocator().mock.createDocument(
-          context,
-          _selectedType,
-          instructions.isEmpty ? null : instructions,
-          locale,
+          documentText: context,
+          outputType: _selectedType,
+          instructions: instructions.isEmpty ? '' : instructions,
+          language: locale,
         );
       } else {
         result = await ServiceLocator().api.createDocument(
-          context,
-          _selectedType,
-          instructions.isEmpty ? null : instructions,
-          locale,
+          documentText: context,
+          outputType: _selectedType,
+          instructions: instructions.isEmpty ? '' : instructions,
+          language: locale,
         );
       }
 

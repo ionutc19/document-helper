@@ -55,8 +55,8 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
       if (!AppConfig.useMockServices) {
         await ServiceLocator().api.submitFeedback(
           category: _category,
-          subject: subject,
-          body: body,
+          title: subject,
+          description: body,
         );
       }
       if (mounted) setState(() => _sent = true);
