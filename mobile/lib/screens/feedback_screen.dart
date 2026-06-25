@@ -19,6 +19,13 @@ class _FeedbackScreenState extends State<FeedbackScreen> {
   bool _sent = false;
   String? _error;
 
+  @override
+  void initState() {
+    super.initState();
+    _subjectController.addListener(() => setState(() {}));
+    _bodyController.addListener(() => setState(() {}));
+  }
+
   static const _categories = ['feedback', 'bug', 'feature'];
 
   String _localizedCategory(String cat, AppLocalizations l) {

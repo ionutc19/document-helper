@@ -22,6 +22,12 @@ class _ExplainScreenState extends State<ExplainScreen> {
   String? _error;
 
   @override
+  void initState() {
+    super.initState();
+    _textController.addListener(() => setState(() {}));
+  }
+
+  @override
   void dispose() {
     _textController.dispose();
     super.dispose();

@@ -24,6 +24,13 @@ class _CreateScreenState extends State<CreateScreen> {
   CreateResult? _result;
   String? _error;
 
+  @override
+  void initState() {
+    super.initState();
+    _contextController.addListener(() => setState(() {}));
+    _instructionsController.addListener(() => setState(() {}));
+  }
+
   static const _outputTypes = [
     'complaint',
     'request',
