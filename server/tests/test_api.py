@@ -63,8 +63,6 @@ def test_create_validation(client):
         "/api/create/generate",
         json={
             "document_text": "",
-            "output_type": "email",
-            "instructions": "hi",
             "language": "en",
         },
     )

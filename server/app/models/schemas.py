@@ -33,7 +33,7 @@ class CreateRequest(BaseModel):
         ..., description="Type of document to generate",
     )
     instructions: str = Field(
-        ..., min_length=5, description="User instructions for generation",
+        default="", description="User instructions for generation (optional)",
     )
     language: str = Field(default="en", pattern="^(en|ro)$")
 
