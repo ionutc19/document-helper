@@ -6,12 +6,16 @@ import 'config/theme.dart';
 import 'l10n/app_localizations.dart';
 import 'l10n/language_provider.dart';
 import 'services/service_locator.dart';
+import 'services/user_identity.dart';
 import 'screens/landing_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+  try {
+    MobileAds.instance.initialize();
+  } catch (_) {}
   ServiceLocator();
+  await UserIdentity().load();
 
   final languageProvider = LanguageProvider();
   await languageProvider.load();
